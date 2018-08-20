@@ -1,0 +1,24 @@
+body{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+p{
+    color: red;
+    margin-left: 200px;
+    margin-top: -23px;
+    display: inline;
+    border:black double 2px;
+}
+input:hover{
+    border: 2px solid green;
+    box-shadow: 0 0 12px green;
+    transition: all 0,5 ease;
+}
+input:focus{
+    border-color:  green;
+    box-shadow: 0 0 8px green; 
+}
+h1{
+    text-align: center;
+}

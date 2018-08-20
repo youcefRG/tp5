@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="tp5.css" />
+    <script src="tp5.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>inscription</h1>
+    <div>
+        <fieldset >
+            <legend>Information personnelles</legend>
+            <form method="POST" action="tretement.php">
+                <div>
+                    Civilite: <br>
+                    
+                    <select name="civilite" onclick="test(this)" onchange="temp(this)" onfocus="f15(this)">
+                        <option disabled selected value>select votre civilite</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Ms">Ms</option>
+                        </select>
+                        <p id="p1">vous devez selectionner votre civilite</p> 
+                    </script>
+                </div>
+                <br>
+                <div>
+                   Nom: <br>
+                   
+                   <input type="text" name="Nom" id="nome" onfocus="f15(this)" onkeyup="f1(this)">
+                   <p id="p2">un nom ne peut pas contenir moins de 2 caracteres</p>
+                </div>
+                <br>
+                <div>
+                    Prenom: <br>
+                    
+                
+                    <input id="prenom" type="text" name="Prenom" onfocus="f15(this)" onkeyup="f2(this)">
+                    <p id="p3"> un prenom ne peut pas contenir moins de 2 caracteres</p>
+                    
+                </div>
+                <br>
+                <div>
+                    Age: <br>
+                    
+                
+                    <input id="age" type="number" name="Age" onfocus="f15(this)" onkeyup="f3(this)">
+                    <p id="p4">l'age doit etre compris entre 5 et 100</p>
+                    
+                </div>
+                <br>
+                <div>
+                    Email: <br>
+                    
+                
+                    <input id="email" type="text" name="Email" onfocus="f15(this)" onkeyup="f4(this)" >
+                    <p id="p5">l'Email doit etre valide</p>
+                    
+                </div>
+                <br>
+                <div>
+                    pays: <br>
+                  <select id="see" name="pays" onclick="test(this)" onchange="temp1(this)" onfocus="f15(this)" >
+                    <option disabled selected value>selectionner votre pays de residence :</option>
+                      <option value="algeria">algeria</option>
+                      <option value="USA">USA</option>
+                      <option value="kanada">kanada</option>
+                  </select>
+                  <p id="p6"> vous devez selectionner votre pays de residence</p>
+                </div>
+            </form>
+
+        </fieldset>
+    </div>
+    <br>
+    <br>
+    <div>
+        <fieldset >
+            <legend>Information de connexion</legend>
+            <div>
+                Pseudo:
+                <br>
+            
+                <input id="pseudo" type="text" name="Pseudo" onfocus="f15(this)" onkeyup="f5(this)">
+                <p id="p7">le pseudo ne peut pas contenir moins de 4 caracter</p>
+              
+            </div>
+            <br>
+            <div>
+                Mot de passe:
+                <br>
+            
+                <input id="passe" type="password" name="password" onfocus="f15(this)" onkeyup="f6(this)" >
+                <p id="p8">le mot de passe ne peut pas contenir moins de 6 caracter</p> 
+               
+            </div>
+            <br>
+            <div>
+                Mot de passe (confirmation):
+                <br>
+            
+                <input id="passc" type="password" name="E-mail" onkeyup="f7(this)">
+                <p id="p9">le mot de passe de confirmation doit etre identique a l'oreginal</p>
+            
+            </div>
+            <br>
+        </fieldset>
+    </div>
+    <br>
+    <br>
+    <div>
+        <input type="checkbox" name="desire" value="desire" id="desire">
+        <label for="desire">je dèsire resevoir la newsletter chaque mois </label>
+   </div>
+   <br>
+   <div>
+      <input type="submit" value="Envoyer"> <input type="submit" value="Rènitialiser la formulair">
+    </div>
+    <script  type="text/javascript">
+    var civilite =document.getElementById('p1')
+    civilite.style.display='none'
+    var nom = document.getElementById('p2')
+    nom.style.display='none'
+    var prenom = document.getElementById('p3')
+    prenom.style.display = 'none'
+    var age = document.getElementById('p4')
+    age.style.display = 'none'
+    var email = document.getElementById('p5')
+    email.style.display = 'none'
+    var pays = document.getElementById('p6')
+    pays.style.display = 'none'
+    var pesudo = document.getElementById('p7')
+    pesudo.style.display='none'
+    var mdp = document.getElementById('p8')
+    mdp.style.display ='none'
+    var mdpc = document.getElementById('p9')
+    mdpc.style.display = 'none'
+
+
+    var nome = document.getElementById('nome')
+    var prenom = document.getElementById('prenom') 
+    var age = document.getElementById('age')
+    var email = document.getElementById('email')
+    var pesudo = document.getElementById('pesudo')
+    var pass = document.getElementById('pass')
+    var passc = document.getElementById('passc')
+
+function f2(x) {
+    if (x.value.lenght >=2) {
+        x.style.outline = "2px solid green";
+        document.getElementById('p2').style.display='none'
+        document.getElementById('p3').style.display='none'
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//onfocus
+function f15(x) {
+ x.style.outline ="2pxsolid red";
+ if (x==nome) {
+     document.getElementById('p2').style.display='block'
+     
+ }
+ if (x == prenom) {
+        document.getElementById('p3').style.display = 'block'
+
+    }
+    if (x == age) {
+        document.getElementById('p4').style.display = 'block'
+
+    }
+    if (x==email) {
+            document.getElementById('p5').style.display = 'block'
+    }
+    
+
+    
+    
+}
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+
+</html>
